@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulatore di Test</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #controls {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        #counters {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #counters p {
+            background: #333;
+            color: #0f0;
+            padding: 5px;
+            margin: 5px 0;
+            font-size: 1.2em;
+            border-radius: 5px;
+        }
+        #searchContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #searchContainer input {
+            width: 100px;
+            padding: 5px;
+            margin: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #searchButton {
+            width: 100px;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 5px;
+        }
+        #searchButton:hover {
+            background: #218838;
+        }
+        #questionContainer {
+            width: 80%;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .options button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .options button:hover {
+            background: #0056b3;
+        }
+        #retryButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        #retryButton:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div id="counters">
+            <p>Domande Svolte: <span id="totalCount">0</span></p>
+            <p>Risposte Esatte: <span id="correctCount">0</span></p>
+            <p>Risposte Errate: <span id="wrongCount">0</span></p>
+        </div>
+        <div id="searchContainer">
+            <input type="number" id="startQuestion" placeholder="Dalla domanda">
+            <input type="number" id="endQuestion" placeholder="Alla domanda">
+            <button id="searchButton">Avvia Simulazione</button>
+        </div>
+    </div>
+    <div id="questionContainer">
+        <h1>Simulatore di Test</h1>
+    </div>
+    <button id="retryButton">Riprova Domande Sbagliate</button>
+</body>
+</html>
