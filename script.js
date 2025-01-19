@@ -17,7 +17,7 @@ fetch("domande.json")
 function loadQuestion(index) {
   if (index >= questions.length || index > endQuestion) {
     if (wrongQuestions.length > 0) {
-      document.getElementById("retryButton").style.display = "block";
+      document.getElementById("retryButton").style.display = "flex";
       return;
     } else {
       alert("Test completato!");
@@ -83,7 +83,7 @@ document.getElementById("retryButton").addEventListener("click", function() {
     currentIndex = 0;
     errorCount = 0;
     correctCount = 0;
-    document.getElementById("retryButton").style.display = "none";
+    document.getElementById("retryButton").style.display = "flex";
     loadQuestion(currentIndex);
   } else {
     alert("Non ci sono domande sbagliate da riprovare.");
@@ -111,6 +111,6 @@ document.getElementById("searchButton").addEventListener("click", function() {
 
   errorCount = 0;
   correctCount = 0;
-  document.getElementById("retryButton").style.display = "none";
+  document.getElementById("retryButton").style.display = "flex";
   loadQuestion(currentIndex);
 });
