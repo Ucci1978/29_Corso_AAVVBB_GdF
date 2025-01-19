@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icona.ico" type="image/x-icon">
     <title>29° Corso AA.VV.BB. GdF</title>
     <script src="script.js" defer></script>
     <style>
@@ -10,29 +11,26 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #474859;
             font-family: Arial, sans-serif;
         }
-        #controls {
-            width: 80%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        #top-controls {
+            width: 100%;
             padding: 10px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            border-radius: 10px;
+            background-color: #474859;
+            color: #caf50a;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
         #counters {
             display: flex;
-            flex-direction: column;
+            border:#caf50a;
+            flex-direction: row;
             align-items: center;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'arial', Arial, Helvetica, sans-serif, monospace;
         }
         #counters p {
-            background: #333;
-            color: #0f0;
             padding: 5px;
             margin: 5px 0;
             font-size: 1.2em;
@@ -40,7 +38,7 @@
         }
         #searchContainer {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
         }
         #searchContainer input {
@@ -56,7 +54,7 @@
             padding: 10px;
             background: #28a745;
             color: white;
-            border: none;
+            border: #caf50a;
             border-radius: 5px;
             font-size: 1em;
             cursor: pointer;
@@ -65,6 +63,17 @@
         }
         #searchButton:hover {
             background: #218838;
+        }
+        header {
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #474859;
+        }
+        header img {
+            max-width: 35%;
+            height: auto;
+            position: relative
         }
         #questionContainer {
             width: 80%;
@@ -99,8 +108,13 @@
         .options button:hover {
             background: #0056b3;
         }
-        #retryButton {
+        #retryContainer {
+            width: 80%;
+            text-align: center;
             margin-top: 20px;
+        }
+        #retryButton {
+            display: none;
             padding: 10px 20px;
             background: #dc3545;
             color: white;
@@ -109,7 +123,7 @@
             font-size: 1.2em;
             cursor: pointer;
             transition: background 0.3s;
-            text-align: center;
+            width: 100%;
         }
         #retryButton:hover {
             background: #c82333;
@@ -117,21 +131,26 @@
     </style>
 </head>
 <body>
-    <div id="controls">
+    <div id="top-controls">
         <div id="counters">
-            <p>Nr. Domanda: <span id="totalCount">0</span></p>
+            <p>Domande Svolte: <span id="totalCount">0</span></p>
             <p>Risposte Esatte: <span id="correctCount">0</span></p>
             <p>Risposte Errate: <span id="wrongCount">0</span></p>
         </div>
         <div id="searchContainer">
-            <input type="number" id="startQuestion" placeholder="Dalla domanda">
-            <input type="number" id="endQuestion" placeholder="Alla domanda">
+            <input type="number" id="startQuestion" placeholder="Dalla">
+            <input type="number" id="endQuestion" placeholder="Alla">
             <button id="searchButton">Avvia Simulazione</button>
         </div>
     </div>
-    <div id="questionContainer">
-        <h1>Rispondi alle seguenti domande</h1>
+    <header>
+        <img src="images/bannersito.png" alt="Intestazione">
+    </header>
+    <div id="retryContainer">
+        <button id="retryButton">Riprova Domande Sbagliate</button>
     </div>
-    <button id="retryButton">Riprova Domande Sbagliate</button>
+    <div id="questionContainer">
+        <h1>Simulatore di Test</h1>
+    </div>
 </body>
 </html>
